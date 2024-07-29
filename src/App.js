@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Home from './screens/Home';
+import Calendar from './screens/Calendar'
 import Schedule from './screens/Schedule';
 import Login from './screens/Login';
 import Map from './screens/Map';
@@ -26,6 +27,7 @@ class App extends React.Component {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/map" element={<Map />} />
+                    <Route path="/calendar" element={<Calendar/>} />
                     <Route path="/schedule" element={<Schedule />} />
                     <Route
                         path="/login"

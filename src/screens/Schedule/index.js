@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-//import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Container, Head, PlanList, PlanItem, AddButton } from "./styles.js";
 import Header from "../../component/Header";
 import Navbar from "../../component/NavBar";
 import Modal from "./Modal/index.js";
 
 const Schedule = () => {
-  //const location = useLocation(); // location 객체를 사용
-  //const date = location.state?.date || 'No date selected'; // location.state에서 date를 가져옴
-  //연동 후 주석 풀기
-  const date = "2025-08-05";
+  //연동
+  const location = useLocation(); // location 객체를 사용
+  const date = location.state?.date || 'No date selected'; // location.state에서 date를 가져옴
+  
+  //const date = "2025-08-05"; //연동 전
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMode, setModalMode] = useState("add");
   const [currentPlan, setCurrentPlan] = useState(null);
