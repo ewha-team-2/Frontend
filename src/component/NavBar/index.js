@@ -8,7 +8,6 @@ const Navbar = ({ isAuthenticated, logout }) => {
         <nav>
             <ul>
                 <li><Link to="/">홈</Link></li>
-                <li><Link to="/reviews">리뷰</Link></li>
                 <li><Link to="/map">지도</Link></li>
                 <li><Link to="/schedule">일정</Link></li>
                 {isAuthenticated ? (

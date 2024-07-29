@@ -25,7 +25,6 @@ class App extends React.Component {
 
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/reviews" element={<Review />} />
                     <Route path="/map" element={<Map />} />
                     <Route path="/schedule" element={<Schedule />} />
                     <Route
