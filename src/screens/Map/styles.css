@@ -1,0 +1,104 @@
+/* 전체 컨테이너 */
+.container {
+    display: grid;
+    grid-template-columns: 400px 1fr; /* left-pane을 고정 크기로 설정하고 나머지 공간을 right-pane에 할당 */
+    height: 100vh; /* 화면의 전체 높이 */
+    margin: 0; /* 기본 여백 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+}
+
+/* 왼쪽 영역 */
+.left-pane {
+    background-color: #FFFFFF; /* 배경색 설정 */
+    padding: 0px;
+    overflow-y: auto; /* 리뷰가 길어질 경우 스크롤 가능하게 설정 */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 오른쪽 영역 */
+.right-pane {
+    background-color: #FFFFFF; /* 배경색 설정 */
+    padding: 0px;
+}
+
+/* 지도 컨테이너 */
+.map-container {
+    width: 100%;
+    height: 100%; /* 모바일 화면에서의 높이 설정 */
+}
+
+/* 검색된 장소 */
+.searched-place {
+    border: lightgray solid 2px;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 5px;
+}
+
+/* 리뷰 섹션 */
+.reviews-section {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* 리뷰 작성 폼 */
+.review-form {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.review-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.review-form input,
+.review-form textarea {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border-radius: 5px;
+    border: solid 1px #ccc;
+}
+
+.review-form button {
+    padding: 10px 15px;
+    background-color: #E146A6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.review-form button:hover {
+    background-color: #d0359e;
+}
+
+/* 모바일 화면에서의 스타일 변경 */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* 모바일 화면에서는 한 열로 설정 */
+        grid-template-rows: auto auto 1fr; /* 오른쪽 패널, 왼쪽 패널, 나머지 요소 순서 */
+        height: auto;
+    }
+
+    .right-pane {
+        grid-row: 1 / 2; /* 오른쪽 패널을 첫 번째 행에 배치 */
+        height: 30vh; /* 화면의 30% 높이로 설정 */
+        overflow-y: hidden; /* 스크롤 비활성화 */
+    }
+
+    .left-pane {
+        grid-row: 2 / 3; /* 왼쪽 패널을 두 번째 행에 배치 */
+        height: 70vh; /* 화면의 70% 높이로 설정 */
+        overflow-y: auto; /* 스크롤 가능하게 설정 */
+    }
+
+    .map-container {
+        height: 100%; /* 부모 요소의 높이에 맞춤 */
+    }
+}
