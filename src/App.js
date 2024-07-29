@@ -5,6 +5,7 @@ import Schedule from './screens/Schedule';
 import Login from './screens/Login';
 import Map from './screens/Map';
 import Review from './screens/Review';
+import MyCalendar from './screens/Calendar';
 
 class App extends React.Component {
     state = {
@@ -28,6 +29,7 @@ class App extends React.Component {
                     <Route path="/reviews" element={<Review />} />
                     <Route path="/map" element={<Map />} />
                     <Route path="/schedule" element={<Schedule />} />
+                    <Route path="/cal" element={<MyCalendar/>} />
                     <Route
                         path="/login"
                         element={

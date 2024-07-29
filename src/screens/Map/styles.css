@@ -1,0 +1,45 @@
+/* 전체 컨테이너 */
+.container {
+    display: grid;
+    /*grid-template-columns: 1fr 1fr; /* 두 개의 열을 동일한 비율로 나누기 */
+    grid-template-columns: 3fr 7fr; /* 두 개의 열을 3:7 비율로 나누기 */
+    height: 100vh; /* 화면의 전체 높이 */
+    margin: 0; /* 기본 여백 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+}
+
+/* 왼쪽 영역 */
+.left-pane {
+    background-color: #FFFFFF; /* 배경색 설정 */
+    padding: 0px;
+}
+
+/* 오른쪽 영역 */
+.right-pane {
+    background-color: #FFFFFF; /* 배경색 설정 */
+    padding: 0px;
+}
+
+.searched-place {
+    border: lightgray solid 2px;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.searched-place > * {
+    margin: 0px;
+    padding: 10px 0px 0px 5px;
+}
+
+.btn {
+    color: white;
+    background-color: #E146A6;
+    font-family: '굴림';
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 0px;
+}
