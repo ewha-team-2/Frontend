@@ -30,26 +30,42 @@
 
 /* 검색된 장소 */
 .searched-place {
-    border: lightgray solid 2px;
-    border-radius: 15px;
-    margin: 10px;
-    padding: 5px;
+    border: lightgray solid 1px;
+    border-radius: 10px;
+    padding: 0 20px;
+}
+
+.search-input{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    outline: none;
+    text-overflow: ellipsis;
+    width: calc(100% - 20px);
+    margin: 20px 0;
 }
 
 /* 리뷰 섹션 */
 .reviews-section {
-    margin: 10px;
-    padding: 10px;
+    margin-top: 20px;
+    padding: 20px;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 10px;
+}
+
+form {
+    margin-bottom: 0;
 }
 
 /* 리뷰 작성 폼 */
 .review-form {
-    margin: 10px;
-    padding: 10px;
+    padding: 15px;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-top: 0;
 }
 
 .review-form label {
@@ -61,21 +77,31 @@
 .review-form textarea {
     width: calc(100% - 20px);
     padding: 8px;
-    border-radius: 5px;
+    border-radius: 10px;
     border: solid 1px #ccc;
 }
 
+.button_div{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+
 .review-form button {
     padding: 10px 15px;
-    background-color: #E146A6;
+    background-color: #6c63ff;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    width: 60px;
 }
 
 .review-form button:hover {
-    background-color: #d0359e;
+    background-color: #6c63ff;
 }
 
 /* 모바일 화면에서의 스타일 변경 */

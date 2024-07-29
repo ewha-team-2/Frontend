@@ -22,6 +22,7 @@ const Home = () => {
     endDate: "",
   });
 
+  /*
   useEffect(() => {
     const fetchTravels = async () => {
       try {
@@ -35,6 +36,7 @@ const Home = () => {
     };
     fetchTravels();
   }, []);
+  */
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
