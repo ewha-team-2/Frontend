@@ -53,6 +53,7 @@ export const LoginButton = styled.button`
     border-radius: 10px;
     padding: 10px 20px;
     font-size: 16px;
+    width: 200px;
     cursor: pointer;
     transition: background-color 0.3s;
     font-family: Arial, sans-serif;
