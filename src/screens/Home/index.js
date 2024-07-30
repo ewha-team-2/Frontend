@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import {
   AddButton,
   Container,
@@ -14,18 +15,33 @@ import Navbar from "../../component/NavBar";
 import Header from "../../component/Header";
 
 const Home = () => {
-  const [travels, setTravels] = useState([]);
+  const [travels, setTravels] = useState([
+    {
+      id: "1",
+      title: "오사카 여행",
+      start_date: "2024-08-05",
+      end_date: "2024-08-12",
+    },
+    {
+      id: "2",
+      title: "미국 여행",
+      start_date: "2024-12-28",
+      end_date: "2025-01-12",
+    },
+  ]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newTravel, setNewTravel] = useState({
     title: "",
     startDate: "",
     endDate: "",
   });
+  const navigate = useNavigate();
 
+  /*
   useEffect(() => {
     const fetchTravels = async () => {
       try {
-        const response = await axios.get('/travels', {
+        const response = await axios.get("/travels", {
           withCredentials: true,
         });
         setTravels(response.data);
@@ -35,6 +51,7 @@ const Home = () => {
     };
     fetchTravels();
   }, []);
+  */
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -52,25 +69,31 @@ const Home = () => {
 
     setTravels([...travels, travelData]);
     setIsModalOpen(false);
-
+    /*
     try {
-        const response = await axios.post('/travels', travelData, {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            withCredentials: true,
-        });
+      const response = await axios.post("/travels", travelData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      });
 
-        if (response.status !== 201 && response.status !== 200) {
-            throw new Error('Failed to create travel');
-        }
+      if (response.status !== 201 && response.status !== 200) {
+        throw new Error("Failed to create travel");
+      }
 
-        setTravels([...travels, response.data]);
-        setNewTravel({ title: '', startDate: '', endDate: '' });
-        setIsModalOpen(false);
+      setTravels([...travels, response.data]);
+      setNewTravel({ title: "", startDate: "", endDate: "" });
+      setIsModalOpen(false);
     } catch (error) {
-        console.error('Failed to create travel:', error);
+      console.error("Failed to create travel:", error);
     }
+    */
+  };
+
+  const handleTravelClick = (id) => {
+    console.log("클릭");
+    navigate(`/calendar/${id}`);
   };
 
   return (
@@ -117,7 +140,10 @@ const Home = () => {
         <TravelList>
           <h2>내 여행</h2>
           {travels.map((travel, index) => (
-            <TravelItem key={index}>
+            <TravelItem
+              key={index}
+              onClick={() => handleTravelClick(travel.id)}
+            >
               <h3 className="title">{travel.title}</h3>
               <span className="date">
                 {travel.start_date} - {travel.end_date}
