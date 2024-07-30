@@ -16,18 +16,18 @@ import Header from "../../component/Header";
 
 const Home = () => {
   const [travels, setTravels] = useState([
-    {
-      id: "1",
-      title: "오사카 여행",
-      start_date: "2024-08-05",
-      end_date: "2024-08-12",
-    },
-    {
-      id: "2",
-      title: "미국 여행",
-      start_date: "2024-12-28",
-      end_date: "2025-01-12",
-    },
+    // {
+    //   id: "1",
+    //   title: "오사카 여행",
+    //   start_date: "2024-08-05",
+    //   end_date: "2024-08-12",
+    // },
+    // {
+    //   id: "2",
+    //   title: "미국 여행",
+    //   start_date: "2024-12-28",
+    //   end_date: "2025-01-12",
+    // },
   ]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newTravel, setNewTravel] = useState({
@@ -37,7 +37,7 @@ const Home = () => {
   });
   const navigate = useNavigate();
 
-  /*
+  
   useEffect(() => {
     const fetchTravels = async () => {
       try {
@@ -51,7 +51,7 @@ const Home = () => {
     };
     fetchTravels();
   }, []);
-  */
+  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -69,7 +69,7 @@ const Home = () => {
 
     setTravels([...travels, travelData]);
     setIsModalOpen(false);
-    /*
+    
     try {
       const response = await axios.post("/travels", travelData, {
         headers: {
@@ -88,7 +88,7 @@ const Home = () => {
     } catch (error) {
       console.error("Failed to create travel:", error);
     }
-    */
+  
   };
 
   const handleTravelClick = (id) => {

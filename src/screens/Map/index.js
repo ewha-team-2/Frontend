@@ -32,6 +32,7 @@ const Map = () => {
   const [reviews, setReviews] = useState([]); // 리뷰 데이터 저장
   const [starScore, setStarScore] = useState(0); // 별점 상태
   const [comment, setComment] = useState(""); // 댓글 상태
+  const [avgRating, setAvgRating] = useState(0); // 평균 평점 상태
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // 모바일 여부 확인
   const mapRef = useRef(null);
   const searchBoxRef = useRef(null);
@@ -84,6 +85,9 @@ const Map = () => {
       });
       const data = await response.json();
       setReviews(data.reviews);
+      if (data.avgRating) {
+        setAvgRating(data.avgRating); // 평균 평점 설정
+      }
     } catch (error) {
       console.error("Failed to fetch reviews:", error);
     }
@@ -113,6 +117,8 @@ const Map = () => {
           setReviews((prevReviews) => [createdReview, ...prevReviews]);
           setStarScore(0);
           setComment("");
+          // 리뷰 제출 후 평균 평점 업데이트
+          fetchReviews(placeId);
         } else {
           throw new Error("Failed to create review");
         }
@@ -172,6 +178,7 @@ const Map = () => {
                 </div>
               </form>
             )}
+            <h3>평균 평점 : {avgRating ? avgRating.toFixed(2) : "0.00"} </h3>
             <h3>리뷰</h3>
             {reviews.length > 0 ? (
               <ul>
