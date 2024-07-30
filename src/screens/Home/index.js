@@ -22,11 +22,10 @@ const Home = () => {
     endDate: "",
   });
 
-  /*
   useEffect(() => {
     const fetchTravels = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/travels", {
+        const response = await axios.get('/travels', {
           withCredentials: true,
         });
         setTravels(response.data);
@@ -36,7 +35,6 @@ const Home = () => {
     };
     fetchTravels();
   }, []);
-  */
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -55,26 +53,24 @@ const Home = () => {
     setTravels([...travels, travelData]);
     setIsModalOpen(false);
 
-    /*
-        try {
-            const response = await axios.post('http://localhost:3000/travels', travelData, {
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                withCredentials: true,
-            });
+    try {
+        const response = await axios.post('/travels', travelData, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            withCredentials: true,
+        });
 
-            if (response.status !== 201 && response.status !== 200) {
-                throw new Error('Failed to create travel');
-            }
-
-            setTravels([...travels, response.data]);
-            setNewTravel({ title: '', startDate: '', endDate: '' });
-            setIsModalOpen(false);
-        } catch (error) {
-            console.error('Failed to create travel:', error);
+        if (response.status !== 201 && response.status !== 200) {
+            throw new Error('Failed to create travel');
         }
-        */
+
+        setTravels([...travels, response.data]);
+        setNewTravel({ title: '', startDate: '', endDate: '' });
+        setIsModalOpen(false);
+    } catch (error) {
+        console.error('Failed to create travel:', error);
+    }
   };
 
   return (
