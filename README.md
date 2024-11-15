@@ -1,6 +1,9 @@
 
 # 🍇 코드잇부스트 이화여대 교내 해커톤
 ### Team 2 🏆
+**해커톤 1등 수상**
+
+<img src="https://github.com/user-attachments/assets/d90b6dad-f3f4-41b7-a31f-d9d53f0486eb" style="width:400px;">
 
 </br></br>
 --- 
@@ -42,7 +45,11 @@
 </br></br>
 --- 
 ## 📍 시연 영상
-https://youtu.be/JJO-q9VSgdc
+
+<a href="https://youtu.be/JJO-q9VSgdc" target="_blank">
+  <img src="https://img.youtube.com/vi/JJO-q9VSgdc/0.jpg" alt="Watch the video" width="500"/>
+</a>
+
 
 </br></br>
 --- 
